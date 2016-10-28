@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv, pmQualityTv, temperatureTv, climateTv, windTv, city_name_Tv;
     private ImageView weatherImg, pmImg;
 
+    private DrawerLayout mDrawerLayout;
 
 
     @Override
@@ -63,9 +65,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
 
 
-        /**
-         *
-         */
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null) {
             setupDrawerContent(navigationView);
@@ -79,7 +78,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
-                        //mDrawerLayout.closeDrawers();
+                        mDrawerLayout.closeDrawers();
                         return true;
                     }
                 });

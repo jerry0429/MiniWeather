@@ -38,12 +38,19 @@
             android:textSize="22.0sp" />
 
         <ImageView
+            android:id="@+id/title_setup"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_action_list_2" />
+
+        <ImageView
             android:id="@+id/title_update_btn"
             android:layout_width="45.0dip"
             android:layout_height="45.0dip"
             android:layout_gravity="center"
+            android:layout_toLeftOf="@id/title_setup"
             android:src="@drawable/title_update"
-            android:layout_toLeftOf="@+id/title_setup"
             android:visibility="visible" />
 
         <ImageView
@@ -60,12 +67,7 @@
             android:layout_toLeftOf="@id/title_share"
             android:src="@drawable/base_action_bar_action_city" />
 
-        <ImageView
-            android:id="@+id/title_setup"
-            android:layout_width="45.0dip"
-            android:layout_height="45.0dip"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/ic_action_list_2" />
+
     </RelativeLayout>
 
     <LinearLayout
