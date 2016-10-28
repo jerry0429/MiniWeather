@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff0f0f0">
+
+    <RelativeLayout
+        android:id="@+id/city_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#ffcd2626">
+        <!--选择城市界面，标题处：当前城市名称-->
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="当前城市：北京"
+            android:textColor="#ffffffff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="45dip"
+            android:layout_height="45dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/base_action_bar_back_normal" />
+
+
+        <ImageView
+            android:layout_width="1.0dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/title_back"
+            android:background="#a71717"
+            android:gravity="center" />
+    </RelativeLayout>
+    <!--title结束-->
+    <!--搜索栏-->
+    <EditText
+    android:id="@+id/search_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/city_title"
+    android:layout_margin="10dp"
+    android:background="@drawable/contact_search_box_edittext_keyword_background"
+    android:cursorVisible="true"
+    android:drawableLeft="@drawable/magnifying_glass"
+    android:drawablePadding="8dp"
+    android:hint="搜索全国城市（中文）"
+    android:paddingBottom="8dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="30dp"
+    android:paddingTop="8dp"
+    android:singleLine="true"
+    android:textColor="#ff000000"
+    android:textColorHint="#ffcccccc"
+    android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_edit" />
+
+    <!--城市列表-->
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_edit" />
+
+
+    <cn.edu.nini.miniweather.LetterIndexView
+        android:id="@+id/letter_index_view"
+        android:layout_width="36dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/show_letter_in_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/voip_toast_bg"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="30sp"/>
+</RelativeLayout>
