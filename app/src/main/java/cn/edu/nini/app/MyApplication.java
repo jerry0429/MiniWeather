@@ -35,6 +35,8 @@ public class MyApplication extends Application {
         initCityList();
     }
 
+
+
     public static Application getInstance() {
         return mApplication;
     }

@@ -1,9 +1,14 @@
 package cn.edu.nini.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by nini on 2016/10/25.
  */
-public class TodayWeather {
+public class TodayWeather implements Parcelable, Serializable {
     private String city;
     private String updatetime;
     private String wendu;
@@ -130,4 +135,59 @@ public class TodayWeather {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public TodayWeather(String city, String updatetime, String wendu, String shidu, String pm25, String quality, String fengxiang, String fengli, String date, String high, String low, String type) {
+        this.city = city;
+        this.updatetime = updatetime;
+        this.wendu = wendu;
+        this.shidu = shidu;
+        this.pm25 = pm25;
+        this.quality = quality;
+        this.fengxiang = fengxiang;
+        this.fengli = fengli;
+        this.date = date;
+        this.high = high;
+        this.low = low;
+        this.type = type;
+    }
+
+    public TodayWeather() {
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.city);
+        dest.writeString(this.updatetime);
+        dest.writeString(this.wendu);
+        dest.writeString(this.shidu);
+        dest.writeString(this.pm25);
+        dest.writeString(this.quality);
+        dest.writeString(this.fengxiang);
+        dest.writeString(this.fengli);
+        dest.writeString(this.date);
+        dest.writeString(this.high);
+        dest.writeString(this.low);
+        dest.writeString(this.type);
+    }
+
+    public static final Parcelable.Creator<TodayWeather> CREATOR = new Parcelable.Creator<TodayWeather>() {
+
+        @Override
+        public TodayWeather createFromParcel(Parcel source) {
+            return new TodayWeather(source.readString(), source.readString(), source.readString(),
+                    source.readString(), source.readString(), source.readString(),
+                    source.readString(), source.readString(), source.readString(),
+                    source.readString(), source.readString(), source.readString());
+        }
+
+        @Override
+        public TodayWeather[] newArray(int size) {
+            return new TodayWeather[0];
+        }
+    };
 }
